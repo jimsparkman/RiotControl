@@ -5,6 +5,14 @@ body {
   border: 0;
 }
 
+a {
+  text-decoration: none;
+  color: grey;
+  display: block;
+  max-width: 400px;
+  margin: 5% auto;
+}
+
 todoapp {
   display: block;
   max-width: 400px;
