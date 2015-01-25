@@ -13,6 +13,8 @@ Example data flow:
 4. TodoStore triggers 'todos_changed' event, with new data.
 5. TodoList view implements a 'todos_changed' handler, receiving new data.
 
+This encourages loosely coupled components. Stores house application logic and domain-specific data. Views comprise the user interface. Either side can be swapped out without interfering with the other. For example, a store that saves to local storage can be easily swapped for one that saves to a back-end service instead.
+
 Demo
 ============
 
