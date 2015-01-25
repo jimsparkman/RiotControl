@@ -20,6 +20,8 @@ TodoList demo built on Riot 2.0 demo:
 
 http://jimsparkman.github.io/RiotControl/demo/
 
+Reference todostore.js and todo.tag to understand how this works.
+
 Usage
 ============
 
