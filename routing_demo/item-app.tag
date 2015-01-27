@@ -5,6 +5,8 @@
 	<div>Notice the URL routing, back button works as expected.</div>
 	<br/>
 	<div if={ !edit }>
+		<span>Search:</span>
+		<br/>
 		<input name='input' onkeyup={ search }>
 		<form onsubmit={ clear }>
 			<button disabled={ !txt }>Clear</button>
