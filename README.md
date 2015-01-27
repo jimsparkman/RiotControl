@@ -15,14 +15,16 @@ Example data flow:
 
 This encourages loosely coupled components. Stores house application logic and domain-specific data. Views comprise the user interface. Either side can be swapped out without interfering with the other. For example, a store that saves to local storage can be easily swapped for one that saves to a back-end service instead.
 
-Demo
+Demos
 ============
 
-TodoList demo built on Riot 2.0 demo:
+[TodoList](http://jimsparkman.github.io/RiotControl/demo/)
 
-http://jimsparkman.github.io/RiotControl/demo/
+Reference demo/todostore.js and todo.tag to understand how this works.
 
-Reference todostore.js and todo.tag to understand how this works.
+[URL Routing Example](http://jimsparkman.github.io/RiotControl/routing_demo/)
+
+Reference routing_demo/index.html, itemstore.js, and item-app.tag
 
 Usage
 ============
