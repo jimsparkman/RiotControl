@@ -67,3 +67,17 @@ RiotControl.on('todos_changed', function(items) {
     self.update()
 })
 ```
+
+Remove event listener.
+
+```javascript
+RiotControl.off(event)
+
+RiotControl.off(event, callback)
+```
+
+Same as RiotControl.on(), executes once.
+
+```javascript
+RiotControl.one(event, callback)
+```

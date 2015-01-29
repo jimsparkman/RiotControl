@@ -5,13 +5,26 @@ var RiotControl = {
   },
   trigger: function() {
     var args = [].slice.call(arguments)
-    this._stores.forEach(function(el,i,a){
+    this._stores.forEach(function(el){
       el.trigger.apply(null, args)
     })
   },
-  on: function(ev, callback) {
-    this._stores.forEach(function(el,i,a){
-      el.on(ev, callback)
+  on: function(ev, cb) {
+    this._stores.forEach(function(el){
+      el.on(ev, cb)
+    })
+  },
+  off: function(ev, cb) {
+    this._stores.forEach(function(el){
+      if (cb)
+        el.off(ev, cb)
+      else
+        el.off(ev)        
+    })    
+  },
+  one: function(ev, cb) {
+    this._stores.forEach(function(el){
+      el.one(ev, cb)
     })
   }
 }
