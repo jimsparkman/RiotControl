@@ -1,0 +1,47 @@
+<!doctype html5>
+
+<html>
+  <head>
+    <title>RiotControl Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--[if lt IE 9]>
+    <script src="js/es5-shim.js"></script>
+    <script src="js/html5-shiv.js"></script>
+    <script>html5.addElements('binary-app')</script>
+    <![endif]-->
+    <style>
+      .bit {
+        float: left;
+        max-width: 10px;
+        padding-right: 10px;
+        border: 1px solid;
+      }
+      .bit > span {
+        padding-left: 5px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <binary-app></binary-app>
+
+    <br/>
+    
+    <a href="https://github.com/jimsparkman/RiotControl">View on GitHub</a>
+
+    <script src="js/riot.min.js"></script>
+    <script src="riotcontrol.js"></script>    
+    <script src="calcstore.js"></script>
+    <script src="binary-app.js"></script>
+    <script>
+      var calcStore = new CalculatorStore()
+      RiotControl.addStore(calcStore)
+      riot.mount('binary-app') // Kickoff the Riot app.
+    </script>
+
+  </body>
+
+</html>
