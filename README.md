@@ -26,6 +26,8 @@ Reference demo/todostore.js and todo.tag to understand how this works.
 
 Reference routing_demo/index.html, itemstore.js, and item-app.tag
 
+[Binary Calculator](http://jimsparkman.github.io/RiotControl/binary_demo/)
+
 Usage
 ============
 
