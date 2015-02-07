@@ -28,6 +28,13 @@ Reference routing_demo/index.html, itemstore.js, and item-app.tag
 
 [Binary Calculator](http://jimsparkman.github.io/RiotControl/binary_demo/)
 
+Things People Have Built
+============
+
+[Flux Catalog](https://github.com/txchen/feplay/tree/gh-pages/riot_flux)
+
+RiotJS version of the flux-comparison catalog.
+
 Usage
 ============
 
