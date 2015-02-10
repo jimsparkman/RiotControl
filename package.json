@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/icetan/RiotControl"
+    "url": "https://github.com/jimsparkman/RiotControl"
   },
   "keywords": [
     "riotjs",
     "flux"
   ],
   "author": "Jim Sparkman",
-  "license": "None",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/icetan/RiotControl/issues"
+    "url": "https://github.com/jimsparkman/RiotControl/issues"
   },
-  "homepage": "https://github.com/icetan/RiotControl"
+  "homepage": "https://github.com/jimsparkman/RiotControl"
 }
