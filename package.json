@@ -1,0 +1,24 @@
+{
+  "name": "riotcontrol",
+  "version": "0.0.1",
+  "description": "Event Controller / Dispatcher For RiotJS, Inspired By Flux",
+  "main": "riotcontrol.js",
+  "files": [ "riotcontrol.js", "README.md", "LICENSE.txt" ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimsparkman/RiotControl"
+  },
+  "keywords": [
+    "riotjs",
+    "flux"
+  ],
+  "author": "Jim Sparkman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimsparkman/RiotControl/issues"
+  },
+  "homepage": "https://github.com/jimsparkman/RiotControl"
+}
