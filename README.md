@@ -1,6 +1,10 @@
 RiotControl
 ============
 
+```
+npm install riotcontrol
+```
+
 A Simplistic Central Event Controller / Dispatcher For [RiotJS](https://github.com/muut/riotjs), Inspired By Facebook's [Flux](https://github.com/facebook/flux) Architecture Pattern. 
 
 RiotControl is, in the spirit of Riot itself, extremely lightweight. It forgoes elements of Flux, to favor small and simple applications. RiotControl passes events from views to stores, and back, relying heavily on Riot's observerable API. Stores can talk to many views, and views can talk to many stores.
