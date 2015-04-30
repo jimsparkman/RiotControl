@@ -39,6 +39,10 @@ Things People Have Built
 
 RiotJS version of the flux-comparison catalog.
 
+[Where Da Movies At](https://github.com/derekr/wheredamoviesat)
+
+Map of all movies in a given location.
+
 Usage
 ============
 
