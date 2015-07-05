@@ -11,6 +11,8 @@ RiotControl is, in the spirit of Riot itself, extremely lightweight. It forgoes 
 
 Example data flow:
 
+If TodoList is a view (maybe in Riot as a tag?) that hooks into RiotControl to trigger *action* events and listen for *change(d)* events, and TodoStore is generic JavaScript code that hooks into RiotControl to listen for *action" events where it does business logic to handle them and then dispatches the results in *changed* events.
+
 1. TodoList view triggers 'todo_remove' event to RiotControl.
 2. RiotControl passes event along to stores.
 3. TodoStore implements a 'todo_remove' event handler, talks to back-end server.
