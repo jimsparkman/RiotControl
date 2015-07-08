@@ -13,12 +13,14 @@ Example data flow
 -------
 
 Given the following:
+
 - A TodoList view (Riot tag)
   - Triggers actions/events through RiotControl and listens for data change events.
 - A TodoStore (generic JS data store)
   - Mix of model manager/MVC-pattern controller that listens for actions/events, performs business logic, and dispatches data changed events.
 
 Possible data flow:
+
 1. TodoList view triggers 'todo_remove' event to RiotControl.
 2. RiotControl passes event along to stores.
 3. TodoStore implements a 'todo_remove' event handler, talks to back-end server.
