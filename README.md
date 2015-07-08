@@ -9,15 +9,21 @@ A Simplistic Central Event Controller / Dispatcher For [RiotJS](https://github.c
 
 RiotControl is, in the spirit of Riot itself, extremely lightweight. It forgoes elements of Flux, to favor small and simple applications. RiotControl passes events from views to stores, and back, relying heavily on Riot's observerable API. Stores can talk to many views, and views can talk to many stores.
 
-Example data flow:
+Example data flow
+-------
 
-If TodoList is a view (maybe in Riot as a tag?) that hooks into RiotControl to trigger *action* events and listen for *change(d)* events, and TodoStore is generic JavaScript code that hooks into RiotControl to listen for *action" events where it does business logic to handle them and then dispatches the results in *changed* events.
+Given the following:
+- A TodoList view (Riot tag)
+  - Triggers actions/events through RiotControl and listens for data change events.
+- A TodoStore (generic JS data store)
+  - Mix of model manager/MVC-pattern controller that listens for actions/events, performs business logic, and dispatches data changed events.
 
+Possible data flow:
 1. TodoList view triggers 'todo_remove' event to RiotControl.
 2. RiotControl passes event along to stores.
 3. TodoStore implements a 'todo_remove' event handler, talks to back-end server.
-4. TodoStore triggers 'todos_changed' event, with new data.
-5. TodoList view implements a 'todos_changed' handler, receiving new data.
+4. TodoStore triggers 'todos_changed' event, with new data. (new list with the todo removed)
+5. TodoList view implements a 'todos_changed' event handler, receiving new data, and updating the UI.
 
 This encourages loosely coupled components. Stores house application logic and domain-specific data. Views comprise the user interface. Either side can be swapped out without interfering with the other. For example, a store that saves to local storage can be easily swapped for one that saves to a back-end service instead.
 
