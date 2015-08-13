@@ -30,13 +30,18 @@
 
       riot.mount('item-app') // Kickoff the Riot app.
 
-      // Riot router
-      riot.route(function(page,id) {
+      // Define router function
+      var router = function(page,id) {
         if (page == 'add')
           RiotControl.trigger('route_item_add')
         else
           RiotControl.trigger('route_item', id)
-      })
+      }
+
+      // Riot router
+      riot.route(router)
+      // Execute router function once for rendering the items
+      riot.route.exec(router);
     </script>
 
   </body>
