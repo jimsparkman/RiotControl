@@ -9,7 +9,7 @@ var RiotControl = {
   RiotControl[api] = function() {
     var args = [].slice.call(arguments);
     this._stores.forEach(function(el){
-      el[api].apply(null, args);
+      el[api].apply(el, args);
     });
   };
 });
