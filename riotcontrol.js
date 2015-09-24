@@ -2,6 +2,9 @@ var RiotControl = {
   _stores: [],
   addStore: function(store) {
     this._stores.push(store);
+  },
+  reset: function() {
+    this._stores = [];
   }
 };
 
