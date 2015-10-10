@@ -66,11 +66,11 @@ API
 Register the store in central dispatch, where store is a riot.observable(). Generally, all stores should be created and registered before the Riot app is mounted.
 
 ```javascript
-RiotControl.addStore(store) 
+RiotControl.addStore("store", store) 
 
 // Example, at start of application:
 var todoStore = new TodoStore() // Create a store instance.
-RiotControl.addStore(todoStore) // Register the store in central dispatch.
+RiotControl.addStore("TodoStore", todoStore) // Register the store in central dispatch.
 ```
 
 Trigger event on all stores registered in central dispatch. Essentially, a 'broadcast' version of Riot's el.trigger() API.
@@ -90,6 +90,10 @@ RiotControl.on(event, callback)
 
 // Example, inside Riot view (tag):
 RiotControl.on('todos_changed', function(items) {
+    // Here we can get the todoStore anywhere in application.
+    var todoStore = RiotControl.getStore("TodoStore");
+    todoStore.onChange(items);
+    
     self.items = items
     self.update()
 })
