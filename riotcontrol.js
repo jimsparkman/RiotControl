@@ -4,12 +4,13 @@ var RiotControl = {
     this._stores.push({"key": key, "store": store});
   },
   getStore: function(key) {
+    var store = null;
     this._stores.forEach(function(el){
       if (el.key === key) {
-        return el.store;
+        store = el.store;
       }
     });
-    return null;
+    return store;
   },
   reset: function() {
     this._stores = [];
@@ -20,7 +21,7 @@ var RiotControl = {
   RiotControl[api] = function() {
     var args = [].slice.call(arguments);
     this._stores.forEach(function(el){
-      el[api].apply(el.store, args);
+      el.store[api].apply(el.store, args);
     });
   };
 });
