@@ -86,14 +86,14 @@ RiotControl.trigger('todo_add', { title: self.text })
 Listen for event, and execute callback when it is triggered. This applies to all stores registered, so that you may receive the same event from multiple sources.
 
 ```javascript
-RiotControl.on(event, callback)
+var Store = RiotControl.getStore("store")
+Store.on(event, callback)
 
 // Example, inside Riot view (tag):
-RiotControl.on('todos_changed', function(items) {
+var TodoStore = RiotControl.getStore("TodoStore");
+TodoStore.on('todos_changed', function(items) {
     // Here we can get the todoStore anywhere in application.
-    var todoStore = RiotControl.getStore("TodoStore");
-    todoStore.onChange(items);
-    
+    TodoStore.onChange(items);
     self.items = items
     self.update()
 })
@@ -107,8 +107,8 @@ RiotControl.off(event)
 RiotControl.off(event, callback)
 ```
 
-Same as RiotControl.on(), executes once.
+Same as TodoStore.on(), executes once.
 
 ```javascript
-RiotControl.one(event, callback)
+TodoStore.one(event, callback)
 ```
