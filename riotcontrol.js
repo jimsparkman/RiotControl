@@ -1,27 +1,22 @@
+var _ = require('lodash');
 var RiotControl = {
-  _stores: [],
-  addStore: function(key, store) {
-    this._stores.push({"key": key, "store": store});
+  _stores: {},
+  setStore: function(key, store) {
+    this._stores[key] = store;
   },
   getStore: function(key) {
-    var store = null;
-    this._stores.forEach(function(el){
-      if (el.key === key) {
-        store = el.store;
-      }
-    });
-    return store;
+    return this._stores[key]
   },
   reset: function() {
-    this._stores = [];
+    this._stores = {};
   }
 };
 
 ['on','one','off','trigger'].forEach(function(api){
   RiotControl[api] = function() {
     var args = [].slice.call(arguments);
-    this._stores.forEach(function(el){
-      el.store[api].apply(el.store, args);
+    _.values(this._stores).forEach(function(el){
+      el[api].apply(el, args);
     });
   };
 });
