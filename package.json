@@ -19,10 +19,13 @@
     "riotjs",
     "flux"
   ],
-  "author": "Jim Sparkman",
-  "license": "MIT",
+  "author": "Sam Liu",
+  "license": "DWFYW",
   "bugs": {
     "url": "https://github.com/jimsparkman/RiotControl/issues"
   },
-  "homepage": "https://github.com/jimsparkman/RiotControl"
+  "homepage": "https://github.com/jimsparkman/RiotControl",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
 }
