@@ -1,11 +1,13 @@
 RiotControl
 ============
 
+__UPDATE:__ Experimental multi-threaded version under [dev branch](https://github.com/jimsparkman/RiotControl/tree/dev).
+
 ```
 npm install riotcontrol
 ```
 
-A Simplistic Central Event Controller / Dispatcher For [RiotJS](https://github.com/muut/riotjs), Inspired By Facebook's [Flux](https://github.com/facebook/flux) Architecture Pattern. 
+A Simplistic Central Event Controller / Dispatcher For [RiotJS](https://github.com/muut/riotjs), Inspired By Facebook's [Flux](https://github.com/facebook/flux) Architecture Pattern.
 
 RiotControl is, in the spirit of Riot itself, extremely lightweight. It forgoes elements of Flux, to favor small and simple applications. RiotControl passes events from views to stores, and back, relying heavily on Riot's observerable API. Stores can talk to many views, and views can talk to many stores.
 
@@ -66,7 +68,7 @@ API
 Register the store in central dispatch, where store is a riot.observable(). Generally, all stores should be created and registered before the Riot app is mounted.
 
 ```javascript
-RiotControl.addStore(store) 
+RiotControl.addStore(store)
 
 // Example, at start of application:
 var todoStore = new TodoStore() // Create a store instance.
