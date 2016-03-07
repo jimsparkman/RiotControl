@@ -19,7 +19,7 @@ todoapp {
   margin: 5% auto;
 }
 
-form input {
+input {
   font-size: 100%;
   padding: .6em;
   border: 1px solid #ccc;

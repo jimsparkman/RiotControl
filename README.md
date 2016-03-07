@@ -12,4 +12,3 @@ Stores are automatically wrapped into a seperate thread (web worker). Encapsulat
 
 Currently messages/events are pass by value (not pass by reference).
 
-

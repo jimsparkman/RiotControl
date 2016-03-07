@@ -1,9 +1,9 @@
 // Required
-importScripts('../rc.store.js');
+importScripts('../../rc.store.js');
 
 todos = [
 	{ title: 'Task 1', done: false },
-	{ title: 'Task 2', done: false }
+	{ title: 'Task 2', done: true }
 ];
 
 // Listen to view sending a new todo
@@ -22,3 +22,9 @@ RiotControl.on('todo_remove', function() {
 RiotControl.on('todo_init', function() {
 	RiotControl.trigger('todos_changed', todos);
 });
+
+RiotControl.on('todo_toggle', function(index) {
+	todos[index].done = !todos[index].done
+	RiotControl.trigger('todos_changed', todos);
+});
+

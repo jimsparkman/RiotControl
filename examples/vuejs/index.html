@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>RiotControl Demo</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" href="../common/todo.css">
+
+	</head>
+	<body>
+
+		<todoapp>
+			<h3>RiotControl</h3>
+
+			<div id="app">
+				<ul>
+					<li v-for="todo in todos">
+						<label v-bind:class="{ 'completed': todo.done }">
+							<input type="checkbox" v-model="todo.done" v-on:click="toggleTodo($index)"/>
+							<span>{{ todo.title }}</span>
+						</label>
+					</li>
+				</ul>
+
+				<input name="input" v-model="newTodo" v-on:keyup.enter="addTodo">
+				<br/><br/>
+				<button v-on:click="removeTodo">Remove</button>
+			</div>
+		</todoapp>
+
+		<a href="https://github.com/jimsparkman/RiotControl">View on GitHub</a>
+
+		<script src="js/vue.js"></script>
+		<script src="../../rc.js"></script>
+		<script>
+			RiotControl.addStore('../common/todostore.js');
+
+			var vm = new Vue({
+				el: '#app',
+				data: {
+					newTodo: '',
+					todos: [
+						{ title: 'Add some todos' }
+					]
+				},
+				created: function() {
+					RiotControl.trigger('todo_init');
+				},
+				methods : {
+					addTodo: function() {
+						var text = this.newTodo.trim();
+						if (text) {
+							RiotControl.trigger('todo_add', { title: text, done: false });
+							this.newTodo = '';
+						}
+					},
+					removeTodo: function() {
+						RiotControl.trigger('todo_remove');
+					},
+					toggleTodo: function(index) {
+						RiotControl.trigger('todo_toggle', index);
+					}
+				}
+			});
+
+			RiotControl.on('todos_changed', function(items) {
+				vm.todos = items;
+			});
+		</script>
+	</body>
+</html>
