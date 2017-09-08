@@ -1,3 +1,4 @@
+/* RiotControl v0.0.3, @license MIT */
 var RiotControl = {
   _stores: [],
   addStore: function(store) {
